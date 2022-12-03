@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+// https://adventofcode.com/2022/day/1
 const inputFileName = '1'
 
 // Expected to run from root directory
@@ -11,9 +12,7 @@ fs.readFile('input/'+inputFileName+'.txt', 'utf8', (err, data) => {
   const inputLines = data.split('\n')
   let maxCalories = [0, 0, 0]
   let currCalories = 0
-  let linecount = 0
-  inputLines.forEach(line => {
-    linecount++
+  inputLines.forEach((line, linecount) => {
     if (linecount == inputLines.length) {
       currCalories += parseInt(line)
     }
@@ -24,7 +23,6 @@ fs.readFile('input/'+inputFileName+'.txt', 'utf8', (err, data) => {
           if (maxCalories.length > 3) {
             maxCalories.pop()
           }
-          console.log(maxCalories)
           break;
         }
       }
