@@ -23,12 +23,12 @@ fs.readFile('input/'+inputFileName+'.txt', 'utf8', (err, data) => {
         const item = line.charAt(i)
 
         if(relativeLineCount > 0 && itemFreq[item] == relativeLineCount - 1) {
-            if (lineCount % 3 == 2) {
+            if (relativeLineCount == 2) {
               const offset = isUpperCase(item) ? 38 : 96
               sum += item.charCodeAt(0) - offset
               break
             }
-            itemFreq[item] = lineCount % 3
+            itemFreq[item] = relativeLineCount
         }
         else if (relativeLineCount == 0) {
           itemFreq[item] = 0
