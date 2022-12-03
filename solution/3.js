@@ -12,12 +12,10 @@ fs.readFile('input/'+inputFileName+'.txt', 'utf8', (err, data) => {
   const inputLines = data.split('\n')
   let sum = 0
   let itemFreq = []
-  let dupItem = ''
   inputLines.forEach((line, lineCount) => {
     const relativeLineCount = lineCount % 3
     if (relativeLineCount == 0) {
       itemFreq = []
-      dupItem = ''
     }
     for(let i = 0; i < line.length; i++) {
         const item = line.charAt(i)
