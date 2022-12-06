@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { queue } = require('rxjs');
 
 // https://adventofcode.com/2022/day/5
 const inputFileName = '5'
